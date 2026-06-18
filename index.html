@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-page">
+        <div class="balloons-container" id="balloonsContainer"></div>
+        <div class="form-box">
+            <p class="form-heading">Send a Birthday Card 🎂</p>
+            <p class="form-subtitle">A little surprise to make their day brighter</p>
+            <form id="nameForm">
+                <div class="input-wrap">
+                    <input type="text" id="senderInput" placeholder="Your name (sender)..." required maxlength="50">
+                    <span class="input-emoji">✍️</span>
+                </div>
+                <div class="input-wrap">
+                    <input type="text" id="recipientInput" placeholder="Their name (recipient)..." required maxlength="50">
+                    <span class="input-emoji">🎈</span>
+                </div>
+                <button type="submit" class="btn">Send Birthday Card</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

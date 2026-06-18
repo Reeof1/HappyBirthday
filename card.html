@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SVG filter to remove white background -->
+    <svg style="position:absolute;width:0;height:0;" aria-hidden="true">
+        <defs>
+            <filter id="removeWhite">
+                <feColorMatrix type="matrix" values="
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    -1 -1 -1 0 1.5"/>
+                <feComposite in="SourceGraphic" in2="composite" operator="in"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <div class="card-page">
+
+        <!-- Age Input Step -->
+        <div class="age-form-box" id="ageForm">
+            <span class="form-icon">🎂</span>
+            <h2>You got a Birthday Card!</h2>
+            <p>How old are you turning? <span class="rose-emoji">🌸</span></p>
+            <div class="input-wrap">
+                <input type="number" id="ageInput" placeholder="Enter your age..." min="1" max="120">
+                <span class="input-emoji">🎂</span>
+            </div>
+
+            <p class="photo-prompt">📸 Show us whose birthday it is! <span class="sparkle">✨</span></p>
+            <label for="photoInput" class="photo-upload" id="photoUploadLabel">
+                <span class="photo-upload-icon">📷</span>
+                <span class="photo-upload-text" id="photoUploadText">Choose photo...</span>
+                <input type="file" id="photoInput" accept="image/*" hidden>
+            </label>
+            <div class="photo-preview-wrap" id="photoPreviewWrap">
+                <img id="photoPreview" alt="">
+                <button type="button" class="photo-remove" id="photoRemove">×</button>
+            </div>
+
+            <button class="btn" onclick="showCard()">Open Your Card ✨</button>
+        </div>
+
+        <!-- Card Content -->
+        <div class="card-content hidden" id="cardContent">
+            <div class="card-layout">
+                <div class="user-photo-wrap" id="userPhotoWrap">
+                    <img class="party-hat" src="hat.png" alt="">
+                    <div class="user-photo-circle">
+                        <img id="userPhoto" alt="">
+                    </div>
+                </div>
+                <div class="card-text">
+                    <p class="main-title">Happy Birthday <span id="nameDisplay" class="name-text"></span></p>
+                    <p class="age-line"><span id="ageDisplay"></span> years</p>
+                    <p class="celebrating-text">I wish you a happy and long life 🌙</p>
+                    <p class="from-text">From: <span id="fromDisplay">Reeof Abahussain</span> <span class="heart-symbol">♡</span></p>
+                </div>
+            </div>
+            <img src="background.jpeg" alt="Birthday cake" class="cake-image">
+        </div>
+
+        <div class="balloons-container" id="balloonsContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
